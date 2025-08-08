@@ -1,0 +1,31 @@
+MDT	Site	grassland	GL	HL	WL	S	SM	SD
+3	Arne	N	0	0.33	0.33	0	0.33	0
+2	Bodmin Moor	N	0	0	0.5	0.5	0	0
+2	Braunton Burrows	Y	0.5	0	0	0	0	0.5
+1	Burnham-on-Sea	N	0	0	0	0	1	0
+3	Bystock	Y	0.33	0.33	0.33	0	0	0
+2	Chagford Common	Y	0.5	0.5	0	0	0	0
+2	Cloud Hill	N	0	0.5	0.5	0	0	0
+1	Dartmoor Scrub	N	0	0	0	1	0	0
+3	Dolebury Warren	Y	0.33	0	0.33	0.33	0	0
+1	Dunkery Hill	N	0	1	0	0	0	0
+1	Forest of Dean	N	0	0	1	0	0	0
+3	Haddon Hill	N	0	0.33	0.33	0.33	0	0
+3	Hangman Hill	Y	0.33	0.33	0	0.33	0	0
+2	Haytor	Y	0.5	0	0	0.5	0	0
+1	Hells Mouth	N	0	0	0	1	0	0
+1	Leigh Woods	N	0	0	1	0	0	0
+3	Lytchett Bay	N	0	0	0.33	0.33	0.33	0
+3	Merthyr Mawr	Y	0.33	0	0	0	0.33	0.33
+2	North Hill	N	0	0.5	0	0.5	0	0
+3	Oxwich Bay	Y	0.33	0	0	0.33	0	0.33
+2	Pembrey Beach	N	0	0	0	0	0.5	0.5
+1	Penhale Sands	N	0	0	0	0	0	1
+1	Pewsey Downs	Y	1	0	0	0	0	0
+2	Seet Bridge	N	0	0	0.5	0	0.5	0
+2	Studland	N	0	0.5	0	0	0	0.5
+2	Walborough	Y	0.5	0	0	0	0.5	0
+1	Wheal Coates	N	0	1	0	0	0	0
+3	Woodland Hill	N	0	0.33	0.33	0.33	0	0
+3	Woolacombe	Y	0.33	0	0	0.33	0	0.33
+1	Wyeswood Common	Y	1	0	0	0	0	0

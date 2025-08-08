@@ -1,0 +1,96 @@
+=== Métricas estructurales ===
+Density: 0.0483
+Average clustering: 0.0000
+Transitivity: 0.0000
+Average path length (LCC): 3.2800
+Standard deviation of path length (LCC): 1.3111
+Diameter (LCC): 7
+Degree assortativity: -0.6932
+Bipartivity index (LCC): 1.0000
+
+=== Top 10 por centralidad ===
+
+Degree Centrality:
+  Calluna_vulgaris: 0.3137
+  Potentilla_erecta: 0.2549
+  Erica_cinerea: 0.2353
+  Vaccinium_myrtillus: 0.1961
+  Unknown_CP: 0.0980
+  Erica_tetralix: 0.0784
+  Melanostoma_mellinum: 0.0588
+  Bombus_jonellus: 0.0588
+  Bombus_lucorum: 0.0588
+  Apis_mellifera: 0.0588
+
+Closeness Centrality:
+  Calluna_vulgaris: 0.4280
+  Erica_cinerea: 0.3990
+  Apis_mellifera: 0.3678
+  Scathophaga_stercoraria: 0.3678
+  Unknown_CP: 0.3678
+  Potentilla_erecta: 0.3621
+  Eulithis_testata: 0.3567
+  Melanostoma_mellinum: 0.3462
+  Pachycnemia_hippocastanaria: 0.3462
+  Bombus_jonellus: 0.3057
+
+Betweenness Centrality:
+  Calluna_vulgaris: 0.4801
+  Potentilla_erecta: 0.4056
+  Erica_cinerea: 0.3071
+  Scathophaga_stercoraria: 0.1907
+  Melanostoma_mellinum: 0.1762
+  Vaccinium_myrtillus: 0.1519
+  Unknown_CP: 0.1244
+  Apis_mellifera: 0.0785
+  Eulithis_testata: 0.0643
+  Pachycnemia_hippocastanaria: 0.0559
+
+Eigenvector Centrality:
+  Erica_cinerea: 0.4199
+  Calluna_vulgaris: 0.4065
+  Vaccinium_myrtillus: 0.3230
+  Apis_mellifera: 0.2450
+  Unknown_CP: 0.2245
+  Eulithis_testata: 0.1962
+  Bombus_jonellus: 0.1910
+  Bombus_lucorum: 0.1910
+  Bombus_terrestris: 0.1910
+  Pachycnemia_hippocastanaria: 0.1736
+
+Katz Centrality:
+  Calluna_vulgaris: 0.2968
+  Erica_cinerea: 0.2592
+  Potentilla_erecta: 0.2406
+  Vaccinium_myrtillus: 0.2246
+  Unknown_CP: 0.1788
+  Apis_mellifera: 0.1656
+  Eulithis_testata: 0.1562
+  Melanostoma_mellinum: 0.1523
+  Pachycnemia_hippocastanaria: 0.1517
+  Bombus_jonellus: 0.1507
+
+PageRank:
+  Calluna_vulgaris: 0.1192
+  Potentilla_erecta: 0.1091
+  Erica_cinerea: 0.0741
+  Vaccinium_myrtillus: 0.0626
+  Unknown_CP: 0.0345
+  Erica_tetralix: 0.0246
+  Meteorus_versicolor: 0.0225
+  Eulithis_testata: 0.0209
+  Pachycnemia_hippocastanaria: 0.0208
+  Melanostoma_mellinum: 0.0205
+
+Subgraph Centrality:
+  Calluna_vulgaris: 31.0349
+  Erica_cinerea: 24.5696
+  Potentilla_erecta: 18.9299
+  Vaccinium_myrtillus: 17.8626
+  Unknown_CP: 8.6171
+  Apis_mellifera: 7.7064
+  Bombus_jonellus: 6.7006
+  Bombus_terrestris: 6.7006
+  Bombus_lucorum: 6.7006
+  Eulithis_testata: 6.2093
+

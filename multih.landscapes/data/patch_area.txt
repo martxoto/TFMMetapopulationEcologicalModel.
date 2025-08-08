@@ -1,0 +1,11 @@
+Name	Site	HabPat_Ha	Source
+Salt Marsh	Burnham-on-Sea	125.894508	Land Cover 2007
+Scrub	Dartmoor Scrub	108	Google Earth (manual)
+Heathland	Dunkery Hill	799.954315	Land Cover 2007
+Woodland	Forest of Dean	6146.969565	Land Cover 2007
+Scrub	Hells Mouth	17.059838	Land Cover 2007
+Woodland	Leigh Woods	214.981079	Land Cover 2007
+Sand Dune	Penhale Sands	111.112729	Land Cover 2007
+Grassland	Pewsey Downs	305.3	National Nature Reserve
+Heathland	Wheal Coates	150.535264	Land Cover 2007
+Grassland	Wyeswood Common	12	Gwent WT

@@ -1,0 +1,96 @@
+=== Métricas estructurales ===
+Density: 0.0182
+Average clustering: 0.0000
+Transitivity: 0.0000
+Average path length (LCC): 4.5103
+Standard deviation of path length (LCC): 1.9115
+Diameter (LCC): 11
+Degree assortativity: -0.3079
+Bipartivity index (LCC): 1.0000
+
+=== Top 10 por centralidad ===
+
+Degree Centrality:
+  Daucus_carota: 0.2326
+  Zygaena_filipendulae: 0.1318
+  Hypochaeris_radicata: 0.0853
+  Psilothrix_viridicoeruleus: 0.0775
+  Heracleum_sphondylium: 0.0775
+  Lotus_corniculatus: 0.0698
+  Taraxacum_agg.: 0.0620
+  Meligethes_sp._A: 0.0465
+  Bellis_perennis: 0.0465
+  Anthyllis_vulneraria: 0.0465
+
+Closeness Centrality:
+  Daucus_carota: 0.3503
+  Zygaena_filipendulae: 0.3299
+  Psilothrix_viridicoeruleus: 0.3035
+  Bellis_perennis: 0.2940
+  Pilosella_officinarum: 0.2823
+  Meligethes_sp._A: 0.2809
+  Oedemera_nobilis: 0.2795
+  Isomira_murina: 0.2782
+  Oedemera_lurida: 0.2782
+  Meligethes_sp.: 0.2755
+
+Betweenness Centrality:
+  Daucus_carota: 0.4926
+  Zygaena_filipendulae: 0.4806
+  Plantago_lanceolata: 0.2353
+  Hypochaeris_radicata: 0.2031
+  Psilothrix_viridicoeruleus: 0.1632
+  Unknown_LM: 0.1374
+  Polyommatus_icarus: 0.1355
+  Lotus_corniculatus: 0.1129
+  Meligethes_sp._A: 0.1072
+  Bellis_perennis: 0.0996
+
+Eigenvector Centrality:
+  Daucus_carota: 0.6063
+  Zygaena_filipendulae: 0.2419
+  Psilothrix_viridicoeruleus: 0.2356
+  Hypochaeris_radicata: 0.1871
+  Oedemera_nobilis: 0.1692
+  Meligethes_sp._A: 0.1570
+  Isomira_murina: 0.1540
+  Oedemera_lurida: 0.1508
+  Pilosella_officinarum: 0.1364
+  Delia_platura: 0.1330
+
+Katz Centrality:
+  Daucus_carota: 0.3566
+  Zygaena_filipendulae: 0.2249
+  Psilothrix_viridicoeruleus: 0.1778
+  Hypochaeris_radicata: 0.1592
+  Meligethes_sp._A: 0.1359
+  Heracleum_sphondylium: 0.1296
+  Taraxacum_agg.: 0.1246
+  Bellis_perennis: 0.1239
+  Oedemera_nobilis: 0.1235
+  Pilosella_officinarum: 0.1209
+
+PageRank:
+  Daucus_carota: 0.0840
+  Zygaena_filipendulae: 0.0450
+  Lotus_corniculatus: 0.0330
+  Heracleum_sphondylium: 0.0305
+  Hypochaeris_radicata: 0.0296
+  Psilothrix_viridicoeruleus: 0.0257
+  Taraxacum_agg.: 0.0237
+  Crataegus_monogyna: 0.0225
+  Anthyllis_vulneraria: 0.0181
+  Bellis_perennis: 0.0170
+
+Subgraph Centrality:
+  Daucus_carota: 158.6872
+  Zygaena_filipendulae: 47.7233
+  Psilothrix_viridicoeruleus: 30.7711
+  Hypochaeris_radicata: 25.4578
+  Meligethes_sp._A: 15.3596
+  Heracleum_sphondylium: 14.9833
+  Oedemera_nobilis: 14.8002
+  Oedemera_lurida: 12.5470
+  Taraxacum_agg.: 12.5091
+  Pilosella_officinarum: 12.3194
+

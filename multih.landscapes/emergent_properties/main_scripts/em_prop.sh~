@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#SBATCH --job-name=MDT_em_prop # the name for the cluster scheduler
+#SBATCH --time=01:30:00 # Maximum allowed runtime per iteration
+#SBATCH --array=1-1000 # the number of iterations
+#SBATCH --output=output_messages/MDT_em_prop_%A_%a.out # the name of the output files
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=david.hemprich-bennett@zoo.ox.ac.uk
+
+module purge
+module load R/3.6.2
+
+Rscript test_em_prop_nm1.R ${SLURM_ARRAY_TASK_ID} &
+Rscript test_em_prop_nm1_sc.R ${SLURM_ARRAY_TASK_ID} &
+Rscript test_em_prop_nm2.R ${SLURM_ARRAY_TASK_ID} &
+Rscript test_em_prop_nm2_sc.R ${SLURM_ARRAY_TASK_ID} &
+
+wait

@@ -1,0 +1,44 @@
+miss_plant_list	solution	which
+Ammophila_sp.	N	
+Centaurium_eritrea	typo	Centaurium_erythraea
+Chamerion_angustifolium	typo	Epilobium_angustifolium
+Convolvulus_vulgaria	alternative	
+Crataegus_sp.	alternative	
+Dead_grass	N	
+Dead_leaf	N	
+Deschampia_flexuosa	typo	Deschampsia_flexuosa
+Dryopteris_sp.	genus	Dryopteris
+Ficaria_verna	typo	Ranunculus_ficaria
+Galeopsis_angustifolium	typo	Galeopsis_angustifolia
+Grass	N	
+Grass_1	N	
+Grass_10	N	
+Grass_11	N	
+Grass_15	N	
+Grass_21	N	
+Grass_3	N	
+Grass_34	N	
+Grass_4	N	
+Grass_9	N	
+Grass_A	N	
+Grass_B	N	
+Heracleum_sp.	alternative	
+Hieracium_agg.	alternative	
+Juncus_sp.	genus	Juncus
+Lotus_pendunculatus	typo	Lotus_pedunculatus
+moss	N	
+Oenanthe_sp.	alternative	
+Oenothera_sp.	alternative	
+Oxalis_perennis	alternative	
+Pilosella_officinarum	typo	Hieracium_pilosella
+Primula_arvensis	alternative	
+ranunculus_acris	typo	Ranunculus_acris
+Ranunculus_sp.	alternative	
+Rhododendron_sp.	genus	Rhododendron
+Rubus_ceasius	typo	Rubus_caesius
+Rubus_fruticosus_agg.	typo	Rubus_fruticosus
+Taraxacum_agg.	genus	Taraxacum
+Thymus_polytrichus	genus	Thymus
+Triglochin_maritima	typo	Triglochin_maritimum
+Ulex_galii	typo	Ulex_gallii
+Viccia_sativa	typo	Vicia_sativa

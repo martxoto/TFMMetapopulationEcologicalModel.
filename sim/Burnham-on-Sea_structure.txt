@@ -1,0 +1,96 @@
+=== Métricas estructurales ===
+Density: 0.0383
+Average clustering: 0.0000
+Transitivity: 0.0000
+Average path length (LCC): 4.4617
+Standard deviation of path length (LCC): 1.7777
+Diameter (LCC): 7
+Degree assortativity: -0.7229
+Bipartivity index (LCC): 1.0000
+
+=== Top 10 por centralidad ===
+
+Degree Centrality:
+  Limonium_vulgare: 0.2000
+  Armeria_maritima: 0.1636
+  Spergularia_media: 0.1455
+  Cochlearia_anglica: 0.1273
+  Cochlearia_officinalis: 0.1091
+  Oenanthe_crocata: 0.0909
+  Aster_tripolium: 0.0909
+  Bucculatrix_maritima: 0.0909
+  Scathophaga_stercoraria: 0.0727
+  Meligethes_sp.: 0.0545
+
+Closeness Centrality:
+  Armeria_maritima: 0.3767
+  Bombus_terrestris: 0.3354
+  Oscinella_frit: 0.3090
+  Scathophaga_stercoraria: 0.3056
+  Meligethes_sp.: 0.2989
+  Scathophaga_calida: 0.2957
+  Lotophila_atra: 0.2865
+  Limonium_vulgare: 0.2778
+  Paregle_audacula: 0.2750
+  Syntormon_aulicum: 0.2750
+
+Betweenness Centrality:
+  Armeria_maritima: 0.7724
+  Bombus_terrestris: 0.4721
+  Oscinella_frit: 0.3259
+  Aster_tripolium: 0.3246
+  Limonium_vulgare: 0.3158
+  Scathophaga_calida: 0.2263
+  Spergularia_media: 0.2209
+  Cochlearia_anglica: 0.2081
+  Scathophaga_stercoraria: 0.1746
+  Bucculatrix_maritima: 0.1414
+
+Eigenvector Centrality:
+  Armeria_maritima: 0.4386
+  Limonium_vulgare: 0.3925
+  Bombus_terrestris: 0.2913
+  Scathophaga_stercoraria: 0.2534
+  Cochlearia_officinalis: 0.2379
+  Meligethes_sp.: 0.2328
+  Spergularia_media: 0.2311
+  Lotophila_atra: 0.1855
+  Oenanthe_crocata: 0.1722
+  Aphanotrigonum_femorella: 0.1710
+
+Katz Centrality:
+  Limonium_vulgare: 0.2361
+  Armeria_maritima: 0.2221
+  Spergularia_media: 0.1976
+  Cochlearia_anglica: 0.1799
+  Cochlearia_officinalis: 0.1772
+  Scathophaga_stercoraria: 0.1658
+  Oenanthe_crocata: 0.1631
+  Aster_tripolium: 0.1628
+  Bombus_terrestris: 0.1627
+  Bucculatrix_maritima: 0.1586
+
+PageRank:
+  Limonium_vulgare: 0.0893
+  Spergularia_media: 0.0648
+  Armeria_maritima: 0.0628
+  Cochlearia_anglica: 0.0608
+  Bucculatrix_maritima: 0.0445
+  Cochlearia_officinalis: 0.0437
+  Aster_tripolium: 0.0410
+  Oenanthe_crocata: 0.0382
+  Scathophaga_stercoraria: 0.0286
+  Phytomyza_asteris_Calycomyza_humeralis: 0.0274
+
+Subgraph Centrality:
+  Limonium_vulgare: 14.3242
+  Armeria_maritima: 11.7219
+  Spergularia_media: 8.9638
+  Cochlearia_anglica: 7.1669
+  Cochlearia_officinalis: 6.9792
+  Scathophaga_stercoraria: 5.6168
+  Oenanthe_crocata: 5.4412
+  Aster_tripolium: 5.1894
+  Bucculatrix_maritima: 4.9969
+  Bombus_terrestris: 4.7990
+

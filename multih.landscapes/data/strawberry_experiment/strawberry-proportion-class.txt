@@ -1,0 +1,21 @@
+Date	MorT	Habitats	Site	Proportion1_1mon
+18-Jun-15	M	1	Leigh Woods	0.375
+19-Jun-15	M	1	Dartmoor Scrub	0.363636364
+21-Jun-15	M	1	Penhale Sands	0.615384615
+21-Jun-15	M	1	Wheal Coates	0.75
+21-Jun-15	M	1	Hells Mouth	
+22-Jun-15	M	1	Burnham-on-Sea	0.857142857
+24-Jun-15	M	1	Forest of Dean	0.428571429
+24-Jun-15	M	1	Wyeswood Common	0.833333333
+25-Jun-15	M	1	Dunkery Hill	0.666666667
+18-Jun-15	T	3	Dolebury Warren	0.857142857
+19-Jun-15	T	3	Bystock	1
+22-Jun-15	T	3	Woodland Hill	0.882352941
+22-Jun-15	T	3	Haddon Hill	0.888888889
+24-Jun-15	T	3	Oxwhich Bay	0.727272727
+24-Jun-15	T	3	Merthyr Mawr	0.75
+25-Jun-15	T	3	Woolaocombe	1
+25-Jun-15	T	3	Hangman Hill	0.666666667
+26-Jun-15	T	3	Lytchett Bay	1
+26-Jun-15	T	3	Arne	1
+				

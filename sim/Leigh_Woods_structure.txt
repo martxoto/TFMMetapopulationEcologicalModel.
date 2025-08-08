@@ -1,0 +1,96 @@
+=== Métricas estructurales ===
+Density: 0.0328
+Average clustering: 0.0000
+Transitivity: 0.0000
+Average path length (LCC): 2.4913
+Standard deviation of path length (LCC): 1.2051
+Diameter (LCC): 4
+Degree assortativity: -0.6269
+Bipartivity index (LCC): 1.0000
+
+=== Top 10 por centralidad ===
+
+Degree Centrality:
+  Euphorbia_amygdaloides: 0.1887
+  Rubus_fruticosus_agg.: 0.1321
+  Hyacinthoides_non-scripta: 0.1132
+  Phytomyza_ilicis: 0.1132
+  Chromatomyia_aprilina: 0.0943
+  Lonicera_periclymenum: 0.0755
+  Gracillaria_syringella: 0.0755
+  Empis_nigritarsis: 0.0377
+  Aulagromyza_cornigera: 0.0377
+  Fraxinus_excelsior: 0.0377
+
+Closeness Centrality:
+  Euphorbia_amygdaloides: 0.1789
+  Empis_nigritarsis: 0.1610
+  Hyacinthoides_non-scripta: 0.1380
+  Chromatomyia_aprilina: 0.1380
+  Pediobius_metallicus: 0.1342
+  Rubus_fruticosus_agg.: 0.1321
+  Phytomyza_ilicis: 0.1239
+  Pegomya_geniculata: 0.1150
+  Melanostoma_scalare: 0.1150
+  Pherbellia_albocostata: 0.1150
+
+Betweenness Centrality:
+  Euphorbia_amygdaloides: 0.0718
+  Chromatomyia_aprilina: 0.0595
+  Phytomyza_ilicis: 0.0537
+  Hyacinthoides_non-scripta: 0.0472
+  Pediobius_metallicus: 0.0457
+  Empis_nigritarsis: 0.0435
+  Lonicera_periclymenum: 0.0385
+  Rubus_fruticosus_agg.: 0.0152
+  Aulagromyza_cornigera: 0.0109
+  Ilex_aquifolium: 0.0109
+
+Eigenvector Centrality:
+  Euphorbia_amygdaloides: 0.6882
+  Empis_nigritarsis: 0.2659
+  Pegomya_geniculata: 0.2151
+  Melanostoma_scalare: 0.2151
+  Pherbellia_albocostata: 0.2151
+  Bicellaria_nigra: 0.2151
+  Tetanura_pallidiventris: 0.2151
+  Hylemya_nigrimana: 0.2151
+  Scathophaga_stercoraria: 0.2151
+  Empis_pennipes: 0.2151
+
+Katz Centrality:
+  Euphorbia_amygdaloides: 0.2395
+  Rubus_fruticosus_agg.: 0.1953
+  Phytomyza_ilicis: 0.1850
+  Hyacinthoides_non-scripta: 0.1844
+  Chromatomyia_aprilina: 0.1747
+  Lonicera_periclymenum: 0.1624
+  Gracillaria_syringella: 0.1571
+  Empis_nigritarsis: 0.1492
+  Pediobius_metallicus: 0.1428
+  Ilex_aquifolium: 0.1374
+
+PageRank:
+  Euphorbia_amygdaloides: 0.0912
+  Rubus_fruticosus_agg.: 0.0696
+  Hyacinthoides_non-scripta: 0.0564
+  Phytomyza_ilicis: 0.0552
+  Chromatomyia_aprilina: 0.0451
+  Gracillaria_syringella: 0.0419
+  Lonicera_periclymenum: 0.0374
+  Fraxinus_excelsior: 0.0220
+  Aulagromyza_cornigera: 0.0205
+  Ilex_aquifolium: 0.0203
+
+Subgraph Centrality:
+  Euphorbia_amygdaloides: 11.9245
+  Rubus_fruticosus_agg.: 7.0825
+  Phytomyza_ilicis: 5.9682
+  Hyacinthoides_non-scripta: 5.9160
+  Chromatomyia_aprilina: 4.9910
+  Lonicera_periclymenum: 4.0642
+  Gracillaria_syringella: 3.8179
+  Empis_nigritarsis: 3.0321
+  Pediobius_metallicus: 2.6819
+  Ilex_aquifolium: 2.4592
+
