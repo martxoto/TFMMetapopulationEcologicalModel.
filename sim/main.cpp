@@ -268,8 +268,8 @@ int main(void)
     cout << "Number of plants: " << plantCount << endl;
     cout << "Number of insects: " << insectCount << endl;
     //Run
-    fichp.open("evolutionp.txt", ios::out | ios::binary);
-    fichv.open("evolutionv.txt", ios::out | ios::binary);
+    fichp.open("evolutionp.txt");
+    fichv.open("evolutionv.txt");
 
     t = 0.0;
     for(int it=0 ; it<n ; it++)
@@ -292,8 +292,8 @@ int main(void)
                 fichv << v[i][site] << " ";
             }
         }
-        fichp << "\n\n" << std::flush;
-        fichv << "\n\n" << std::flush;
+        fichp << endl;
+        fichv << endl;
 
 
         rungekutta(v,p,gamma,h,plantCount,insectCount,numpatch); 
