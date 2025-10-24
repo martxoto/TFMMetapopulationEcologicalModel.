@@ -15,13 +15,10 @@
 #define ha 1
 #define d 0.3
 #define D 2.5
-#define dimp 100
-#define dimv 150
-#define dim 3
 
 using namespace std;
 
-void evaluaFp(double p, double v[][dim], double &fp, double** gamma, int pindex, int site, int insectCount)
+void evaluaFp(double p, const vector<vector<double>>& v, double &fp, double** gamma, int pindex, int site, int insectCount)
 {
     fp = 0.0;
     double sum = 0.0;
@@ -31,7 +28,7 @@ void evaluaFp(double p, double v[][dim], double &fp, double** gamma, int pindex,
     return;
 }
 
-void evaluaFv(double p[][dim], double v[][dim], double &fv, double** gamma, int vindex, int site, int plantCount, int numpatch)
+void evaluaFv(const vector<vector<double>>& p, const vector<vector<double>>& v, double &fv, double** gamma, int vindex, int site, int plantCount, int numpatch)
 {
     fv = 0.0;
     double sum = 0.0;
@@ -45,9 +42,25 @@ void evaluaFv(double p[][dim], double v[][dim], double &fv, double** gamma, int 
     return;
 }
 
-void rungekutta(double v[][dim], double p[][dim], double** gamma, double h, int plantCount, int insectCount, int numpatch)
+void rungekutta(vector<vector<double>>& p, vector<vector<double>>& v, double** gamma, double h, int plantCount, int insectCount, int numpatch)
 {   
-    double sumav, sumap, k1v[insectCount][dim], k2v[insectCount][dim], k3v[insectCount][dim], k4v[insectCount][dim], k1p[dimp][dim], k2p[dimp][dim], k3p[dimp][dim], k4p[dimp][dim], fv[insectCount][dim], fp[dimp][dim], auxv[insectCount][dim], auxp[dimp][dim];
+    double sumav, sumap;
+    
+    vector<vector<double>> k1v(insectCount, vector<double>(numpatch));
+    vector<vector<double>> k2v(insectCount, vector<double>(numpatch));
+    vector<vector<double>> k3v(insectCount, vector<double>(numpatch));
+    vector<vector<double>> k4v(insectCount, vector<double>(numpatch));
+    
+    vector<vector<double>> k1p(plantCount, vector<double>(numpatch));
+    vector<vector<double>> k2p(plantCount, vector<double>(numpatch));
+    vector<vector<double>> k3p(plantCount, vector<double>(numpatch));
+    vector<vector<double>> k4p(plantCount, vector<double>(numpatch)); 
+    
+    vector<vector<double>> fv(insectCount, vector<double>(numpatch));
+    vector<vector<double>> fp(plantCount, vector<double>(numpatch));
+    
+    vector<vector<double>> auxp(plantCount, vector<double>(numpatch));
+    vector<vector<double>> auxv(insectCount, vector<double>(numpatch));
     
     //k1p k1v
     for(int i=0 ; i<plantCount ; i++)
@@ -194,7 +207,6 @@ int main(void)
 {
     int n, numpatch;
     double h, t;
-    double p[dimp][dim], v[dimv][dim];
     ofstream fichp, fichv;
     cout << "Introduce the step: " << endl;
     cin >> h;
@@ -253,16 +265,21 @@ int main(void)
         int j = insectIndex[ins];
         gamma[i][j] = w;
     }
+    
+    vector <vector<double>> p(plantCount,vector<double>(numpatch));
+    vector <vector<double>> v(insectCount,vector<double>(numpatch));
     //Initialization
     
     for(int i=0 ; i<plantCount ; i++)
     {
-            p[i][0] = 100;   
+        for(int site=0 ; site<numpatch ; site++)
+            p[i][site] = 100;   
     }
     
     for(int i=0 ; i<insectCount ; i++)
     {
-            v[i][0] = 500;    
+        for(int site=0 ; site<numpatch ; site++)
+            v[i][site] = 500;    
     }
     
     cout << "Number of plants: " << plantCount << endl;
@@ -296,7 +313,7 @@ int main(void)
         fichv << endl;
 
 
-        rungekutta(v,p,gamma,h,plantCount,insectCount,numpatch); 
+        rungekutta(p,v,gamma,h,plantCount,insectCount,numpatch); 
         t+=h;   
     }
     fichp.close();
