@@ -3,3 +3,14 @@ sim/evolutionv.txt
 evolutionp.txt
 evolutionv.txt
 *.exe
+.venv/
+sim/bin/
+sim/res*/
+*.zip
+*.pdf
+*.csv
+*.sublime-workspace
+MEMORIA/
+sim/avg*.txt
+sim/results*.txt
+sim/tfm.sublime-project

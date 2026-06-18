@@ -1,86 +1,93 @@
-import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
-# === Configuración Estética ===
-# Usamos un estilo limpio para publicaciones académicas
-sns.set_theme(style="whitegrid")
-plt.rcParams.update({'font.size': 10, 'figure.titlesize': 16})
+# === 1. CONFIGURACIÓN ===
+FILENAME = "resultsTarget.txt" 
+OUTPUT_IMAGE = "resultados.png"
 
-# === 1. Cargar Datos ===
-filename = 'results.txt'
-print(f"Leyendo datos de {filename}...")
-
+# === 2. CARGA DE DATOS ===
 try:
-    # Leemos el archivo generado por C++
-    # Asumimos columnas: K, Robustez, SurvPlants, SurvInsects, Service, GiniP, GiniI
-    df = pd.read_csv(filename, sep='\s+', comment='#', header=None,
-                     names=['K', 'Robustez', 'SurvPlants', 'SurvInsects', 'Service', 'GiniP', 'GiniI'])
-except FileNotFoundError:
-    print(f"ERROR: No se encuentra '{filename}'. Ejecuta primero la simulación en C++.")
+    data = np.loadtxt(FILENAME)
+    if data.size == 0:
+        print(f"Error: El archivo '{FILENAME}' está vacío.")
+        exit()
+    print(f"Datos cargados correctamente de '{FILENAME}'. {len(data)} pasos detectados.")
+except Exception as e:
+    print(f"Error al leer los datos: {e}")
     exit()
 
-# === 2. Procesar Datos ===
-# Normalizamos el Eje X: 0.0 = Inicio, 1.0 = Todas las plantas eliminadas
-max_k = df['K'].max()
-df['Fraccion_Eliminada'] = df['K'] / max_k
+# === 3. ASIGNACIÓN DE COLUMNAS A VARIABLES ===
+k_eff = data[:, 0]
+robustness = data[:, 1]
+surv_plants = data[:, 2]
+surv_insects = data[:, 3]
+pollination = data[:, 4]
+shannon_p = data[:, 5]
+shannon_v = data[:, 6]
+norm_biomass = data[:, 7] 
 
-# === 3. Crear Panel de Gráficas ===
-# Creamos una figura con 3 sub-gráficas (columnas)
-fig, axes = plt.subplots(1, 3, figsize=(18, 5), constrained_layout=True)
+# === 4. GENERACIÓN DEL PANEL (2 filas x 2 columnas) ===
+sns.set_theme(style="whitegrid")
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(12, 10), sharex=True)
+colors = sns.color_palette("muted")
 
-# --- GRÁFICA A: ROBUSTEZ Y SUPERVIVENCIA ---
-ax1 = axes[0]
-# Línea principal: Robustez Total
-ax1.plot(df['Fraccion_Eliminada'], df['Robustez'], color='navy', linewidth=2.5, label='Robustez Total')
-ax1.fill_between(df['Fraccion_Eliminada'], df['Robustez'], color='navy', alpha=0.1)
+# --- GRÁFICA [0, 0]: ROBUSTEZ Y BIODIVERSIDAD (DOBLE EJE) ---
+ax1 = axes[0, 0]
+color_rob = colors[0]
 
-# Eje secundario para conteos absolutos
-ax1b = ax1.twinx()
-ax1b.plot(df['Fraccion_Eliminada'], df['SurvPlants'], color='forestgreen', linestyle='--', label='Plantas Vivas')
-ax1b.plot(df['Fraccion_Eliminada'], df['SurvInsects'], color='darkorange', linestyle='-.', label='Insectos Vivos')
+# Pintamos la robustez en el eje Y principal (izquierdo)
+line1 = ax1.plot(k_eff, robustness, '-', color=color_rob, linewidth=2.5, label="Robustez (R)")
+ax1.set_ylabel("Radio de Robustez ($R$)", color=color_rob, fontsize=11, fontweight='bold')
+ax1.tick_params(axis='y', labelcolor=color_rob)
+ax1.set_ylim([0, 1.05])
 
-# Etiquetas y Estilo
-ax1.set_title("Colapso del Ecosistema")
-ax1.set_xlabel("Fracción de Plantas Eliminadas")
-ax1.set_ylabel("Fracción de Robustez (0-1)", color='navy')
-ax1b.set_ylabel("Número de Especies", color='gray')
-ax1.set_ylim(-0.05, 1.05)
+# Creamos el segundo eje Y que comparte el mismo eje X
+ax2 = ax1.twinx()  
+color_plants = colors[2] # Típicamente verde en seaborn muted
+color_insects = colors[1] # Típicamente naranja
 
-# Leyenda combinada
-lines1, labels1 = ax1.get_legend_handles_labels()
-lines2, labels2 = ax1b.get_legend_handles_labels()
-ax1.legend(lines1 + lines2, labels1 + labels2, loc='lower left', fontsize=9)
+# Pintamos plantas e insectos en el eje Y secundario (derecho)
+line2 = ax2.plot(k_eff, surv_plants, '--', color=color_plants, linewidth=2, label="Plantas Vivas")
+line3 = ax2.plot(k_eff, surv_insects, ':', color=color_insects, linewidth=2, label="Insectos Vivos")
+ax2.set_ylabel("Número de Especies", color='gray', fontsize=11, fontweight='bold')
+ax2.tick_params(axis='y', labelcolor='gray')
+ax2.grid(False) # Quitamos la rejilla secundaria para evitar cruces de líneas raros
 
+# Unificamos las leyendas de ambos ejes en una sola cajita
+lines = line1 + line2 + line3
+labels = [l.get_label() for l in lines]
+ax1.legend(lines, labels, loc='best', fontsize=10)
 
-# --- GRÁFICA B: SERVICIO DE POLINIZACIÓN ---
-ax2 = axes[1]
-# Asumiendo que el servicio es la biomasa total
-ax2.plot(df['Fraccion_Eliminada'], df['Service'], color='darkgoldenrod', linewidth=2)
-ax2.fill_between(df['Fraccion_Eliminada'], df['Service'], color='gold', alpha=0.3)
+ax1.set_title("Robustez y Biodiversidad", fontsize=13, fontweight='bold')
 
-ax2.set_title("Servicio de Polinización (Función)")
-ax2.set_xlabel("Fracción de Plantas Eliminadas")
-ax2.set_ylabel("Biomasa Total de Polinizadores")
-ax2.grid(True, linestyle=':', alpha=0.6)
+# --- GRÁFICA [0, 1]: ÍNDICES DE GINI ---
+ax_gini = axes[0, 1]
+ax_gini.plot(k_eff, shannon_p, '-', color=colors[2], linewidth=2, label='Shannon Plantas')
+ax_gini.plot(k_eff, shannon_v, '-', color=colors[1], linewidth=2, label='Shannon Insectos')
+ax_gini.set_title("Entropía de Shannon", fontsize=13, fontweight='bold')
+ax_gini.set_ylabel("Entropía de Shannon", fontsize=11)
+ax_gini.legend(loc='best', fontsize=10)
+ax_gini.set_ylim([0, 4])
 
+# --- GRÁFICA [1, 0]: SERVICIO DE POLINIZACIÓN ---
+ax_pol = axes[1, 0]
+ax_pol.plot(k_eff, pollination, '-', color=colors[3], linewidth=2.5)
+ax_pol.set_title("Servicio de Polinización", fontsize=13, fontweight='bold')
+ax_pol.set_xlabel("Extinciones Efectivas ($k_{eff}$)", fontsize=11)
+ax_pol.set_ylabel("Biomasa Insectos ($P_S$)", fontsize=11)
 
-# --- GRÁFICA C: DIVERSIDAD (Gini-Simpson) ---
-ax3 = axes[2]
-ax3.plot(df['Fraccion_Eliminada'], df['GiniP'], color='forestgreen', linewidth=2, label='Diversidad Plantas')
-ax3.plot(df['Fraccion_Eliminada'], df['GiniI'], color='darkorange', linewidth=2, label='Diversidad Insectos')
+# --- GRÁFICA [1, 1]: BIOMASA NORMALIZADA ---
+ax_bio = axes[1, 1]
+ax_bio.plot(k_eff, norm_biomass, '-', color=colors[4], linewidth=2.5)
+ax_bio.set_title("Biomasa Total Normalizada", fontsize=13, fontweight='bold')
+ax_bio.set_xlabel("Extinciones Efectivas ($k_{eff}$)", fontsize=11)
+ax_bio.set_ylabel("Biomasa Total ($B_{norm}$)", fontsize=11)
+ax_bio.set_ylim([0, 1.05])
 
-ax3.set_title("Pérdida de Diversidad")
-ax3.set_xlabel("Fracción de Plantas Eliminadas")
-ax3.set_ylabel("Índice Gini-Simpson (1-D)")
-ax3.set_ylim(-0.05, 1.05)
-ax3.legend(loc='lower left')
-ax3.grid(True, linestyle=':', alpha=0.6)
-
-
-# === 4. Guardar y Mostrar ===
-output_name = 'panel_resultados_tfm.png'
-plt.savefig(output_name, dpi=300)
-print(f"Gráfica guardada exitosamente como '{output_name}'")
-
+# === 5. AJUSTES FINALES Y GUARDADO ===
+plt.tight_layout()
+plt.savefig(OUTPUT_IMAGE, dpi=300)
+print(f"Panel guardado como '{OUTPUT_IMAGE}'.")
 plt.show()

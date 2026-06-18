@@ -4,7 +4,7 @@ import seaborn as sns
 import numpy as np
 
 # === CONFIGURACIÓN ===
-INTERACTION_FILE = 'interactions_Dolebury_Warren_patches.txt' 
+INTERACTION_FILE = 'interactions/interactions_Penhale_Sands_patches.txt' 
 EVO_P_FILE = 'evolutionp.txt'
 EVO_V_FILE = 'evolutionv.txt'
 

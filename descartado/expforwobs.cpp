@@ -9,7 +9,7 @@ int main(void)
     /*
     cout << "Introduce the step: " << endl;
     cin >> h;
-    
+
     cout << "Introduce Dispersal (D): " << endl;
     cin >> D;
     */
@@ -67,7 +67,7 @@ int main(void)
     
     //Run
     
-    runRandomExtinctionExperiment(p,v,gamma,h,plantCount,insectCount,numPatch, D, rp, rv);
+    runExtinctionExperiment(p, v, gamma, h, plantCount, insectCount, numPatch, D, rp, rv);
     
     return 0;
 }

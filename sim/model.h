@@ -15,15 +15,16 @@
 
 using namespace std;
 
-constexpr double m = 0.2;
-constexpr double r =  2.0;
-constexpr int Kp = 100;
-constexpr int Kv = 1000;
+extern double rp;
+extern double rv;
+extern double alphap;
+extern double alphav;
+extern double D;
 constexpr double ha = 1.0;
-constexpr double d = 0.3;
-//constexpr double D = 2.5;
-constexpr double viability = 1e-6;
-constexpr double alpha = 1.0;
+constexpr double ap = 0.1;
+constexpr double av = 0.1;
+constexpr double viability = 0.01;
+
 
 
 
@@ -36,7 +37,7 @@ void evaluaFv(const vector<vector<double>>& p, const vector<vector<double>>& v, 
 
 void rungekutta(vector<vector<double>>& p, vector<vector<double>>& v, const vector<vector<vector<double>>>& gamma, double h, int plantCount, int insectCount, int numpatch, double D);
 
-void findSteadyState(double t, vector<vector<double>>& p, vector<vector<double>>& v, ofstream& fichp, ofstream& fichv, int plantCount, int insectCount, int numpatch,  const vector<vector<vector<double>>>& gamma, double h, double D);
+void findSteadyState(double& t, vector<vector<double>>& p, vector<vector<double>>& v, ofstream& fichp, ofstream& fichv, int plantCount, int insectCount, int numpatch,  const vector<vector<vector<double>>>& gamma, double h, double D);
 
 void loadGamma(const string &filename, map<string, int>& plantIndex, map<string, int>& insectIndex, int& plantCount, int& insectCount, int& numpatch, vector<vector<vector<double>>>& gamma);
 
@@ -44,5 +45,9 @@ void runExtinctionExperiment(const vector<vector<double>>& p, const vector<vecto
 
 
 void runRandomExtinctionExperiment(const vector<vector<double>>& p, const vector<vector<double>>& v, const vector<vector<vector<double>>>& gamma, double h, int plantCount, int insectCount, int numpatch, double D);
+
+void runTargetExtinctionExperiment(const vector<vector<double>>& p, const vector<vector<double>>& v, const vector<vector<vector<double>>>& gamma, double h, int plantCount, int insectCount, int numPatch, double D);
+
+void runLocalTargetExtinctionExperiment(const vector<vector<double>>& p, const vector<vector<double>>& v, const vector<vector<vector<double>>>& gamma, double h, int plantCount, int insectCount, int numPatch, double D);
 
 #endif
